@@ -201,3 +201,70 @@ button:hover {
         height: 25px;
     }
 }
+
+/* Balon */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 30px;
+    height: 50px;
+    border-radius: 50% 50% 0 0;
+    background-color: #ff69b4;
+    animation: floatUp linear infinite both;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    width: 2px;
+    height: 10px;
+    background-color: #999;
+    border-radius: 0 0 2px 2px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+    }
+}
+
+/* Teks Berkilau */
+@keyframes shimmer {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+#birthdayText p {
+    animation: shimmer 2s infinite;
+}
+
+/* Bintang Berputar */
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffd700;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: spin linear infinite both;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,10 +1,37 @@
 function showSurprise() {
     document.getElementById('surprise').classList.remove('hidden');
+    document.getElementById('confetti').classList.remove('hidden');
+    document.getElementById('balloons').classList.add('hidden');
     startConfetti();
     animateCake();
+    animateStars();
 
     // Menghilangkan tombol setelah diklik
     document.querySelector('button').style.display = 'none';
+}
+
+function animateBalloons() {
+    const balloonContainer = document.getElementById('balloons');
+    for (let i = 0; i < 20; i++) {
+        const balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+        balloon.style.left = Math.random() * 100 + 'vw';
+        balloon.style.backgroundColor = getRandomColor();
+        balloon.style.animationDuration = (Math.random() * 3 + 5) + 's';
+        balloonContainer.appendChild(balloon);
+    }
+}
+
+function animateStars() {
+    const cake = document.querySelector('.cake');
+    for (let i = 0; i < 10; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = Math.random() * 100 + 'px';
+        star.style.top = Math.random() * 100 + 'px';
+        star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        cake.appendChild(star);
+    }
 }
 
 function startConfetti() {
@@ -39,4 +66,5 @@ function getRandomColor() {
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.container');
     container.style.animation = 'zoomIn 1s ease-in-out';
+    animateBalloons(); // Animate balloons on page load
 });

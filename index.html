@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Ulang Tahun</title>
+    <meta name="description" content="Rayakan ulang tahun dengan kejutan yang menyenangkan!">
+    <meta name="keywords" content="ulang tahun, kejutan, perayaan">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Selamat Ulang Tahun!</h1>
         <p id="message">Yang ke 20</p>
-        <button onclick="showSurprise()">Selanjutnya</button>
+        <button onclick="showSurprise()" aria-label="Tampilkan kejutan">Selanjutnya</button>
         <div id="surprise" class="hidden">
             <div class="cake">
                 <div class="candle"></div>
@@ -28,7 +30,8 @@
             </div>
         </div>        
     </div>
-    <div id="confetti"></div>
+    <div id="balloons"></div>
+    <div id="confetti" class="hidden"></div>
     <script src="script.js"></script>
 </body>
 </html>
